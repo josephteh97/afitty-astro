@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import QiYe01 from 'assets/01.png';
+import QiYe02 from 'assets/02.png';
+import QiYe03 from 'assets/03.png';
+import BulletPoint from "./BulletPoint.astro";
+
+
+const { number, left, title, description, single,  points } = Astro.props;
+const selectedImage = number === 1 ? QiYe01 : number === 2 ? QiYe02 : QiYe03;
+---
+{left ?(
+<div>
+	<div class="m-20 bg-[#F2EDE7]">
+		<div class="grid grid-cols-12">
+			<div class="pl-20 col-span-4 content-center">
+				<Image src={selectedImage} alt="QiYe01"></Image>
+			</div>
+			<div class="p-20 col-span-8">
+				<div>
+					<h2 class="text-afitty1 text-5xl font-semibold text-right">
+						{title}
+					</h2>
+					<p class="text-afitty2 text-right mt-5">
+						{description}
+					</p>
+				</div>
+				<BulletPoint single={single} points={points} />
+			</div>
+		</div>
+	</div>
+</div>
+	):(
+<div class="grid grid-cols-12">
+	<div class="bg-afitty1 w-3 col-span-1"></div>
+	<div class="col-span-6 ml-10">
+		<h2 class="text-4xl basis-2/3 text-afitty1 font-semibold">{title}</h2>
+		<p>
+			{description}
+		</p>
+		<BulletPoint single={single} points={points} />
+	</div>
+	<div class="col-start-9 col-end-12 mr-14">
+		<Image src={selectedImage} alt="QiYe01"></Image>
+	</div>
+</div>
+	)}

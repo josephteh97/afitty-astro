@@ -1,0 +1,31 @@
+<div>
+      <header>
+         {/* Your header content */}
+      </header>
+      <div className="image-container">
+          <Image src={exampleImage1} alt="Your Image" width={500} height={300} />
+      </div>
+ </div>
+
+
+<div class="container">
+    <div class="text_seelction">
+        <h1>企业战略咨询</h1>
+        <p>Afitty Solutions 提供全面的企业战略咨询服务, 旨在帮助企业在全球市场中实现可持续发展和竞争优势。</p>
+        <img src={exampleImage1} alt="example image1" width={100} height={60}></img>
+    </div>
+</div>
+"""
+
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta class="generator" content={Astro.generator} />
+        <title>企业战略咨询</title>
+    </head>
+    <body>
+        <h1>企业战略咨询</h1>
+        <p>Afitty Solutions 提供全面的企业战略咨询服务, 旨在帮助企业在全球市场中实现可持续发展和竞争优势。</p>
+    </body>
+</html>

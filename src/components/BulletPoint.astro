@@ -1,0 +1,27 @@
+---
+const { single, points } = Astro.props;
+---
+
+{single?(
+
+<ul class="flex flex-col gap-3 text-afitty2 mt-10">
+    {points.map((item) => (
+            <li class="flex flex-row gap-5">
+                <div class="bg-[#CA9B77] w-2 h-2 mt-2"></div>
+                <div class="text-sm">{item}</div>
+            </li>
+    ))}
+</ul>
+    ):(
+<ul class="grid grid-cols-2">
+    {points.map((item) => (
+            <li class="flex flex-row gap-5 mt-7">
+                <div class="bg-[#CA9B77] w-2 h-2 mt-3"></div>
+                <div>
+                    <h3 class="font-semibold text-afitty2">{item.title}</h3>
+                    <p class="text-afitty2 text-xs">{item.description}</p>
+                </div>
+            </li>
+    ))}
+</ul>
+    )}

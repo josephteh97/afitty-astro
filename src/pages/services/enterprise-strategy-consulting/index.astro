@@ -1,0 +1,151 @@
+---
+import { Image } from 'astro:assets';
+import MeetingImage from 'assets/meeting.jpg';
+import QiYe01 from 'assets/01.png';
+import QiYe02 from 'assets/02.png';
+import Layout from 'src/layouts/Layout.astro'
+import Img1 from 'assets/qiye01.jpg'
+import Card from "../../../components/Card.astro";
+
+const foregroundColor = "hsl(38, 4%, 97%)";
+const backgroundColor = "hsl(79.6, 22.5%, 92.7%)";
+
+
+
+const block1 = {
+    title: '业务战略',
+    description: '提供全方位的业务战略咨询服务，帮助企业在复杂的商业环境中取得成功',
+    bullet_point: ['人才战略', '国际战略', '品牌战略', '理财战略', '战略投资者'],
+    bullet_des: ['发展和保留关键人才，构建高效团队', 
+                '指定和实施国际扩展策略，进入新市场', 
+                '提升品牌知名度和市场影响力，建立强大品牌', 
+                '优化企业财务管理，实现可持续的财务愿景', 
+                '识别并吸引合适的战略投资者，推动企业发展']
+}
+
+const block2 = {
+    title: '3-5年商业计划书',
+    description: '我们帮助企业指定详细的3-5年商业计划书',
+    bullet_point: ['业务：明确业务目标和增长策略',
+                '理财：制定财务目标和预算，确保财务稳定', 
+                '员工：规划人才资源需求，发展人才管理策略', 
+                '营销：开发和实施有效的市场推广策略']
+}
+
+const block3 = {
+    title: '风险管理',
+    description: '通过建立健全的内部控制框架，我们帮助企业有效管理和控制风险',
+    bullet_point: ['内部控制框架：设计和实施内部控制系统，确保业务运营的合规性和有效性']
+}
+
+
+const block4 = {
+    title: '风险管理',
+    description: '内部控制框架：设计和实施内部控制系统，确保业务运营的合规性和有效性',
+    bullet_point: ['集团：设计和优化集团架构',
+                  '运作：优化业务流程和运营管理',
+                  '法人：设立和管理法人实体']
+}
+
+const block5 = {
+    title: '公司估值',
+    description: '我们提供全面的公司估值服务，帮助企业了解其市场价值',
+    bullet_point: ['我们采取多种评估方法，包括：'],
+    bullet_des: ['EBITDA因素：基于企业的息税折旧摊销前利润EBITDA进行估值',
+                '利润/销售额：根据利润和销售额的比例进行估值',
+                '利润/账面价值：基于利润和账面价值的关系进行评估']
+}
+
+
+const block6 = {
+    title: '审批权限',
+    description: '我们协助企业建立明确的审批权限体系，确保决策过程的透明和高效',
+    bullet_point: ['董事会级别：设定董事会层面的审批权限',
+                '管理层：定义管理层的审批权限'
+    ]
+}
+
+
+
+const block7 = {
+    title: '股东关系框架',
+    description: '我们帮助企业构建和管理良好的股东关系，确保透明和有效的沟通',
+    bullet_point: ['董事会层面框架：制定董事会层面的沟通和报告框架',
+                '沟通：建立有效的股东沟通渠道',
+                '报告和披露框架：制定和实施信息披露政策，确保股东知情权'
+    ]
+}
+
+const block1list = [
+    {
+        title:"人才战略",
+        description: "发展和保留关键人才，构建高效团队",
+    },
+    {
+        title:"国际战略",
+        description: "指定和实施国际扩展策略，进入新市场",
+    },
+    {
+        title:"品牌战略",
+        description: "提升品牌知名度和市场影响力，建立强大品牌",
+    },
+    {
+        title:"理财战略",
+        description: "优化企业财务管理，实现可持续的财务健康",
+    },
+    {
+        title:"战略投资者",
+        description: "识别并吸引合适的战略投资者，推动企业发展",
+    },
+]
+
+const block2list = [
+    '业务：明确业务目标和增长策略',
+    '理财：制定财务目标和预算，确保财务稳定',
+    '员工：规划人才资源需求，发展人才管理策略',
+    '营销：开发和实施有效的市场推广策略',
+]
+
+---
+
+<Layout title="企业战略咨询">
+
+    <div class="flex flex-col gap-10">
+
+        <div class="grid grid-cols-2">
+            <div class="text-left grid grid-rows-3 p-10 from-[#DFC2A6] bg-gradient-to-r to-white">
+                <h2 class="text-6xl mt-5 font-semibold text-white">
+                    企业战略咨询
+                </h2>
+                <p class="mt-10 font-bold text-afitty2">
+                    Afitty Solutions 提供全面的企业战略咨询服务, <br/>旨在帮助企业在全球市场中实现可持续发展和竞争优势。
+                </p>
+                <p class="text-xs mt-5 text-afitty2">
+                    我们的服务涵盖业务战略、商业计划书、风险管理、公司结构优化、公司估值、审批权限以及股东关系管理等多个领域。
+                </p>
+            </div>
+            <div>
+                <Image src={MeetingImage} alt="Meeting Image"/>
+            </div>
+        </div>
+
+        <Card
+                number={1}
+                left={true}
+                title="企业战略"
+                description="提供全方位的业务战略咨询服务，帮助企业在复杂的商业环境中取得成功。"
+                single={false}
+                points={block1list}
+        />
+
+        <Card
+                number={2}
+                left={false}
+                title="3-5 年商业计划书"
+                description="我们帮助企业制定详细的3-5年商业计划书。"
+                single={true}
+                points={block2list}
+        />
+    </div>
+
+</Layout>

@@ -1,0 +1,29 @@
+---
+import '@/styles/globals.css'
+import { getCollection, getEntry } from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+
+// 获取集合中的所有条目。
+// 需要集合的名称作为参数。
+// 示例：检索 `src/content/blog/**`
+const allBlogPosts = await getCollection('services');
+
+// 从集合中获取单个条目。
+// 需要集合的名称以及
+// 条目 `slug`（内容集合）或 `id`（数据集合）
+// 示例：检索 `src/content/authors/grace-hopper.json`
+const graceHopperProfile = await getEntry('authors', 'grace-hopper');
+---
+
+<Layout>
+    <div>
+        {allBlogPosts.map((service) => (
+                <div>
+                    <h2 class="text-green-500 font-bold">{service.data.title}</h2>
+                    <div>
+                        {service.data.para1}
+                    </div>
+                </div>
+        ))}
+    </div>
+</Layout>
